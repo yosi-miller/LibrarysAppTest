@@ -59,14 +59,14 @@ namespace LibrarysAppTest.Controllers
                 return RedirectToAction("ShowAllLibrarys");
             }
 
-            Library? library = Data.Get.Librarys.Include(li => li.Shelfs).FirstOrDefault(li => li.Id == id);
-
+            List<Shelf> shelfsList = Data.Get.Shelfs.ToList().FindAll(shelf => shelf.CurentLibrary.Id == id);
+           
             if (id == null)
             {
                 return RedirectToAction("ShowAllLibrarys");
             }
 
-            return View(library);
+            return View(shelfsList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

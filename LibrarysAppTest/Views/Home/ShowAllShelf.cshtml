@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LibrarysAppTest.Models.Library>
+﻿@model IEnumerable<LibrarysAppTest.Models.Shelf>
 
 @{
     ViewData["Title"] = "ShowAllShelf";
@@ -6,6 +6,8 @@
 
 <h1>ShowAllShelf</h1>
 
+@* לסדר את כל שמות השורות
+ *@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -16,7 +18,10 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LibraryType)
+                @Html.DisplayNameFor(model => model.ShelfHeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibrarysShelfType)
             </th>
             <th></th>
         </tr>
@@ -28,7 +33,10 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LibraryType)
+                @Html.DisplayFor(modelItem => item.ShelfHeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibrarysShelfType)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

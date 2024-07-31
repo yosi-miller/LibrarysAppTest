@@ -6,7 +6,7 @@
         static Data? GetData;
 
         // סטרינג החיבור לדאטה בייס
-        string connectionString = "server=YOSEF-MILLER\\SQLEXPRESS; initial catalog=LibrarysApp; user id=sa; password=1234; TrustServerCertificate=Yes";
+        string connectionString = "server=YOSEF-MILLER\\SQLEXPRESS; initial catalog=LibrarysApp1; user id=sa; password=1234; TrustServerCertificate=Yes";
 
         // משתנה שיכיל הפניה לשכבת החיבור לדאטה
         public DataLayer Layer { get; set; }

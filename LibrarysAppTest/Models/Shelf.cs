@@ -10,6 +10,11 @@ namespace LibrarysAppTest.Models
         [Display(Name ="גובה מדף")]
         public int? ShelfHeight { get; set; }
 
-        public List<Book>? ShelfsBooks { get; set; }
+        // TODO - לגשת למידע של הז'אנר (לכאורה מתוך מהמשתנה שמכיל את ההפניה לארון ספרים) ולהחליט אם להוסיף לעשות בגט 
+        //זאנר של הספרייה
+        [Display(Name = "מחלקה")]
+        public string? LibrarysShelfType { get; set; }
+
+        public Library? CurentLibrary { get; set; }
     }
 }

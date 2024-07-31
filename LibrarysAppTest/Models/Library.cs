@@ -11,7 +11,8 @@ namespace LibrarysAppTest.Models
         [Display(Name ="מחלקה")]
         public string? LibraryType { get; set; }
 
+        //להחליט אם צריך להשאיר את זה
         // מערך שיחזיק את כל המדפים של הספרייה
-        public List<Shelf>? Shelfs { get; set; }
+        //public List<Shelf>? Shelfs { get; set; }
     }
 }

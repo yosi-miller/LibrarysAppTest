@@ -4,13 +4,9 @@
     ViewData["Title"] = "ShowAllShelf";
 }
 
-<h1>ShowAllShelf</h1>
+<h1>רשימת מדפים</h1>
 
-@* לסדר את כל שמות השורות
- *@
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -36,12 +32,11 @@
                 @Html.DisplayFor(modelItem => item.ShelfHeight)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LibrarysShelfType)
+                @Html.DisplayFor(modelItem => item.CurentLibrary.LibraryType)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("הצג ספרים", "ShowAllBooks", new { id=item.Id }) |
+                @Html.ActionLink("הוסף ספר למדף", "CreateNewBook", new { id=item.Id })
             </td>
         </tr>
 }

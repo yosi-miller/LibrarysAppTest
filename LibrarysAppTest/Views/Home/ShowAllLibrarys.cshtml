@@ -4,7 +4,7 @@
     ViewData["Title"] = "Show All Librarys";
 }
 
-<h1>ShowAllLibrarys</h1>
+<h1>ברוכים הבאים לספריית בית חיינו</h1>
 
 <p>
     <a asp-action="CreateNewLibrary">הוספת ספרייה חדשה</a>
@@ -32,6 +32,8 @@
             </td>
             <td>
                 @Html.ActionLink("הצג מדפים", "ShowAllShelf", new { id = item.Id }) |
+                @Html.ActionLink("הוסף מדף לספרייה", "CreateNewShelf", new { id = item.Id })
+
             </td>
         </tr>
 }

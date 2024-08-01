@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibrarysAppTest.Models
 {
@@ -12,7 +13,7 @@ namespace LibrarysAppTest.Models
 
         // TODO - לגשת למידע של הז'אנר (לכאורה מתוך מהמשתנה שמכיל את ההפניה לארון ספרים) ולהחליט אם להוסיף לעשות בגט 
         //זאנר של הספרייה
-        [Display(Name = "מחלקה")]
+        [Display(Name = "מחלקה"), NotMapped]
         public string? LibrarysShelfType { get; set; }
 
         public Library? CurentLibrary { get; set; }

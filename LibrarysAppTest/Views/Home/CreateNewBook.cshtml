@@ -1,0 +1,46 @@
+﻿@model LibrarysAppTest.Models.Book
+
+@{
+    ViewData["Title"] = "CreateNewBook";
+}
+
+<h1>הוספת ספר חדש</h1>
+
+<h4>חייבים לקשר ספר למחלקה מסוימת ולשים לב שלא יהיה גדול מגובה המדף</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddNewBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Id" hidden="hidden" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BookName" class="control-label"></label>
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookType" class="control-label"></label>
+                <input asp-for="BookType" class="form-control" />
+                <span asp-validation-for="BookType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookHeight" class="control-label"></label>
+                <input asp-for="BookHeight" class="form-control" />
+                <span asp-validation-for="BookHeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ShowAllLibrarys">חזור לרשימת הספריות</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

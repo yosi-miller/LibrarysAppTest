@@ -32,7 +32,6 @@ namespace LibrarysAppTest.DAL
             SaveChanges();
 
             // הכנסת מדף חדש
-            // TODO - לסדר קטגוריה של כל מדף
             if (Shelfs.Count() == 0)
             {
                 Shelf firstShelf = new Shelf
@@ -44,10 +43,22 @@ namespace LibrarysAppTest.DAL
             }
             SaveChanges();
 
+            if (Books.Count() == 0)
+            {
+                Book newBook = new Book
+                {
+                    BookHeight = 25,
+                    BookName = "מסילת ישרים",
+                    CurentShelf = Shelfs.First()
+                };
+                Books.Add(newBook);
+            }
+            SaveChanges();
         }
 
         public DbSet<Library> Librarys { get; set; }
         public DbSet<Shelf> Shelfs { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         // פונקציה שמחזירה את אפשרויות התחברות למסד נתונים
         private static DbContextOptions GetOptions(string connectionString)

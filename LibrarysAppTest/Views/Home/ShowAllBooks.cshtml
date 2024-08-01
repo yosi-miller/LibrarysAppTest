@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LibrarysAppTest.Models.Book>
+
+@{
+    ViewData["Title"] = "ShowAllBooks";
+}
+
+<h1>הצגת הספרים של המדף</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookHeight)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurentShelf.CurentLibrary.LibraryType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookHeight)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

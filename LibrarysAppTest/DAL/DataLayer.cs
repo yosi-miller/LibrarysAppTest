@@ -18,8 +18,8 @@ namespace LibrarysAppTest.DAL
         private void Sead()
         {
             // אם קיים חברים תחזור
-            if (Librarys.Count() > 0)
-                return;
+            if (Librarys.Count() == 0) { 
+                
 
             // אם לא קיים תיצור ותכניס ערכים לטבלה
             Library firstLibrary = new Library
@@ -28,11 +28,37 @@ namespace LibrarysAppTest.DAL
             };
             // מחזיר את הערך הראשון שנוצר לתוך טבלת החברים
             Librarys.Add(firstLibrary);
+            }
             SaveChanges();
 
+            // הכנסת מדף חדש
+            if (Shelfs.Count() == 0)
+            {
+                Shelf firstShelf = new Shelf
+                {
+                    ShelfHeight = 25,
+                    CurentLibrary = Librarys.First()
+                };
+                Shelfs.Add(firstShelf);
+            }
+            SaveChanges();
+
+            if (Books.Count() == 0)
+            {
+                Book newBook = new Book
+                {
+                    BookHeight = 25,
+                    BookName = "מסילת ישרים",
+                    CurentShelf = Shelfs.First()
+                };
+                Books.Add(newBook);
+            }
+            SaveChanges();
         }
 
         public DbSet<Library> Librarys { get; set; }
+        public DbSet<Shelf> Shelfs { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         // פונקציה שמחזירה את אפשרויות התחברות למסד נתונים
         private static DbContextOptions GetOptions(string connectionString)

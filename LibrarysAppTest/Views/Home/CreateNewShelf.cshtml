@@ -1,0 +1,36 @@
+﻿@model LibrarysAppTest.Models.Shelf
+
+@{
+    ViewData["Title"] = "CreateNewShelf";
+}
+
+<h1>הוספת מדף חדש</h1>
+
+<h4>עבור ספרייה - </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddNewShelf">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Id" hidden="hidden" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ShelfHeight" class="control-label"></label>
+                <input asp-for="ShelfHeight" class="form-control" />
+                <span asp-validation-for="ShelfHeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ShowAllLibrary">חזור לרשימת הספריות</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

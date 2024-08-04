@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Solution.DAL;
+using Solution.Models;
 
 namespace Solution.Controllers
 {
@@ -6,6 +9,7 @@ namespace Solution.Controllers
     {
         public IActionResult Index()
         {
+            List<Library> libraryList = Data.Get.Libraries.Include(lib => lib.ShelfList).ToList();
             return View();
         }
     }

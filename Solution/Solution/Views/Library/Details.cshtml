@@ -36,6 +36,28 @@
         </dd>
     </dl>
 </div>
+
+<hr />
+
+<div>
+    <h4>Shelves</h4>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Height</th>
+                <th>Width</th>
+                <th>Books</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Shelf shelf in Model.ShelfList)
+            {
+
+            }
+        </tbody>
+    </table>
+</div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
